@@ -19,11 +19,11 @@ You can use either python3 or pypy3 to run this app. You will also need virtuale
 1. You will need a connection to MySQL with replication enabled
 ```
 [mysqld]
-server-id		 = 1
-log_bin			 = /var/log/mysql/mysql-bin.log
-expire_logs_days = 10
-max_binlog_size  = 100M
-binlog-format    = row #Very important if you want to receive write, update and delete row events
+server-id           = 1
+log_bin             = /var/log/mysql/mysql-bin.log
+expire_logs_days    = 10
+max_binlog_size     = 100M
+binlog-format       = row #Very important if you want to receive write, update and delete row events
 ```
 
 2. Create a mysql user with the neccessary replication permissions
