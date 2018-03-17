@@ -1,0 +1,7 @@
+**/*dev*
+**/*.pyc
+**/*__pycache__
+**/*.dev
+.env
+**/*.pem
+**/*.sql
