@@ -1,7 +1,7 @@
 # mysql_binlog_kinesis_producer
 Batch MySQL binary log records to AWS Kinesis Firehose.
 
-NOTE: This app has not yet been used in a production environment.
+NOTE: This project has not yet been used in a production environment.
 
 
 ## Getting Started
