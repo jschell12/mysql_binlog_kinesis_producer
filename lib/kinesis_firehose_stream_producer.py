@@ -11,16 +11,13 @@ class KinesisFirehoseStreamProducer(object):
         self.__lock = threading.Lock()
         self.__thread_pool_executor = thread_pool_executor
 
-
     def append(self, item):
         self.__buffer.append({
             'Data': ujson.dumps(item).encode()
         })
 
-
     def buffer_count(self):
         return len(self.__buffer)
-
 
     def flush(self):
         buffer_count = self.buffer_count()
@@ -36,7 +33,6 @@ class KinesisFirehoseStreamProducer(object):
             return True
        
         return False
-
 
     def __pop_slice(self, count):
         popped=deque()
