@@ -13,11 +13,9 @@ class KinesisFirehoseStreamProducer(object):
 
 
     def append(self, item):
-        # self.__lock.acquire()
         self.__buffer.append({
             'Data': ujson.dumps(item).encode()
         })
-        # self.__lock.release()
 
 
     def buffer_count(self):
@@ -42,11 +40,6 @@ class KinesisFirehoseStreamProducer(object):
 
     def __pop_slice(self, count):
         popped=deque()
-        # self.__lock.acquire()
-        # popped = deque(itertools.islice(self.__buffer, 0, count))
-        # self.__buffer = deque(itertools.islice(self.__buffer, count, None))
-        # self.__lock.release()
-
         for i in range(count):
             popped.append(self.__buffer.popleft())
         return popped
