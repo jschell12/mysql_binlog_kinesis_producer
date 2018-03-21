@@ -4,7 +4,7 @@ envdir=$(notdir $(lastword $(shell pwd)))
 
 help:
 	@echo "  env         create a development environment using virtualenv"
-	@echo "  deps        install dependencies using pip"
+	@echo "  deps        install dependencies using pip3"
 
 
 
@@ -26,15 +26,15 @@ env_pypy3:
 
 
 deps:
-	pip install -U -r requirements.txt
+	pip3 install -U -r requirements.txt
 
 
 deps_pypy3:
-	pypy3 -m pip install -U -r requirements.txt
+	pypy3 -m pip3 install -U -r requirements.txt
 
 
 save_deps:
-	pip freeze > requirements.txt
+	pip3 freeze > requirements.txt
 
 
 
